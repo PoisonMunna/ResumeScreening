@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Login</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="https://wallpaperaccess.com/full/85850.jpg">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-box {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 300px;
+        }
+
+        .login-box h2 {
+            margin-bottom: 30px;
+            color: #f44336;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f44336;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-box button:hover {
+            background-color: #d32f2f;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>Login</h2>
+        <div class="error" id="error-msg">Invalid username or password</div>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="checkLogin()">Login</button>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorMsg = document.getElementById("error-msg");
+
+            // You can change these to whatever credentials you want
+            const correctUsername = "admin";
+            const correctPassword = "1234";
+
+            if (username === correctUsername && password === correctPassword) {
+                window.location.href = "list.html"; // redirect on success
+            } else {
+                errorMsg.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

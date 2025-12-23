@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech-V Job Form</title>
+  <link rel="icon" href="https://wallpaperaccess.com/full/85850.jpg">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="application-container">
+    <h1>Tech-V Job Application</h1>
+
+    <form id="jobForm" class="application-form">
+      <!-- Personal Information Section -->
+      <section class="form-section">
+        <h2>Personal Information</h2>
+        <div class="form-group">
+          <label for="full_name">Full Name<span class="required">*</span></label>
+          <input type="text" id="full_name" name="full_name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email<span class="required">*</span></label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number<span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" />
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="form-section">
+        <h2>Education</h2>
+        <div class="form-group">
+          <label for="degree">Degree<span class="required">*</span></label>
+          <select id="degree" name="degree" required>
+            <option value="" disabled selected>Select Degree</option>
+            <option value="Ph.D.">Ph.D.</option>
+            <option value="Postgraduate">Postgraduate</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Other">Other</option>
+          </select>
+          <div id="degree_other_container" class="hidden">
+            <label for="other_degree_text">Please specify other Degree:</label>
+            <input type="text" id="other_degree_text" name="other_degree_text" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="major">Major/Skill<span class="required">*</span></label>
+          <select id="major" name="major" required>
+            <option value="" disabled selected>Select Skills</option>
+            <option value="Data Scientist">Data Scientist</option>
+            <option value="Data Engineer">Data Engineer</option>
+            <option value="AI/ML">AI/ML</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Cyber Security">Cyber Security</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Other">Other</option>
+          </select>
+          <div id="major_other_container" class="hidden">
+            <label for="other_major_text">Please specify other Skills:</label>
+            <input type="text" id="other_major_text" name="other_major_text" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="university">University<span class="required">*</span></label>
+          <input type="text" id="university" name="university" required />
+        </div>
+
+        <div class="form-group">
+          <label for="grad_year">Graduation Year<span class="required">*</span></label>
+          <input type="number" id="grad_year" name="grad_year" min="1900" max="2099" step="1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="gpa">CGPA (out of 10)</label>
+          <input type="number" id="gpa" name="gpa" min="0" max="10" step="0.1" />
+        </div>
+      </section>
+
+      <!-- Work Experience Section -->
+      <section class="form-section">
+        <h2>Work Experience</h2>
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="company" />
+        </div>
+
+        <div class="form-group">
+          <label for="job_title">Job Title</label>
+          <input type="text" id="job_title" name="job_title" />
+        </div>
+
+        <div class="form-group">
+          <label for="duration">Duration (in years)<span class="required">*</span></label>
+          <input type="number" id="duration" name="duration" min="0" step="0.25" required />
+        </div>
+
+        <div class="form-group">
+          <label for="responsibilities">Key Responsibilities</label>
+          <textarea id="responsibilities" name="responsibilities" rows="4"></textarea>
+        </div>
+      </section>
+
+      <!-- Technical Skills Section -->
+      <section class="form-section">
+        <h2>Technical Skills</h2>
+
+        <!-- Programming Languages -->
+        <div class="form-group">
+          <label for="programming_languages">Programming Languages<span class="required">*</span></label>
+          <select id="programming_languages" name="programming_languages" required>
+            <option value="" disabled selected>Select Language</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+            <option value="Other">Other</option>
+          </select>
+          <div id="programming_languages_other_container" class="hidden">
+            <label for="programming_languages_other">Please specify other Programming Languages:</label>
+            <input type="text" name="programming_languages_other" id="programming_languages_other">
+          </div>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="form-group">
+          <label for="frameworks">Frameworks & Libraries<span class="required">*</span></label>
+          <select id="frameworks" name="frameworks" required>
+            <option value="" disabled selected>Select Framework</option>
+            <option value="React">React</option>
+            <option value="Node.js">Node.js</option>
+            <option value="Django">Django</option>
+            <option value="Spring">Spring</option>
+            <option value="Other">Other</option>
+          </select>
+          <div id="frameworks_other_container" class="hidden">
+            <label for="frameworks_other">Please specify other Frameworks:</label>
+            <input type="text" name="frameworks_other" id="frameworks_other">
+          </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="form-group">
+          <label for="tools">Tools & Technologies<span class="required">*</span></label>
+          <select id="tools" name="tools" required>
+            <option value="" disabled selected>Select Tool</option>
+            <option value="Git">Git</option>
+            <option value="Docker">Docker</option>
+            <option value="AWS">AWS</option>
+            <option value="Kubernetes">Kubernetes</option>
+            <option value="Other">Other</option>
+          </select>
+          <div id="tools_other_container" class="hidden">
+            <label for="tools_other">Please specify other Tools:</label>
+            <input type="text" name="tools_other" id="tools_other">
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="form-group">
+          <label for="databases">Databases<span class="required">*</span></label>
+          <select id="databases" name="databases" required>
+            <option value="" disabled selected>Select Database</option>
+            <option value="MySQL">MySQL</option>
+            <option value="MongoDB">MongoDB</option>
+            <option value="PostgreSQL">PostgreSQL</option>
+            <option value="Redis">Redis</option>
+            <option value="Other">Other</option>
+          </select>
+          <div id="databases_other_container" class="hidden">
+            <label for="databases_other">Please specify other Databases:</label>
+            <input type="text" name="databases_other" id="databases_other">
+          </div>
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <button type="submit" class="submit-button">Submit Application</button>
+        <div id="response" class="response-message"></div>
+      </div>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
